@@ -1,0 +1,1349 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/thenativeweb/p2p#readme"
+
+    >p2p (v0.10.2)</a>
+</h1>
+<h4>p2p implements a peer-to-peer protocol.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.p2p">module p2p</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.p2p.Peer">
+            function <span class="apidocSignatureSpan">p2p.</span>Peer
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.p2p.WellKnownPeers">
+            function <span class="apidocSignatureSpan">p2p.</span>WellKnownPeers
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.p2p.peer">
+            function <span class="apidocSignatureSpan">p2p.</span>peer
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">p2p.</span>Peer.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">p2p.</span>WellKnownPeers.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">p2p.</span>errors</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">p2p.</span>hex</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">p2p.</span>index</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">p2p.</span>serverBase</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.p2p.Peer">module p2p.Peer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.p2p.Peer.Peer">
+            function <span class="apidocSignatureSpan">p2p.</span>Peer
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.p2p.Peer.super_">
+            function <span class="apidocSignatureSpan">p2p.Peer.</span>super_
+            <span class="apidocSignatureSpan">(conf)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.p2p.Peer.prototype">module p2p.Peer.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.p2p.Peer.prototype.fixSuccessor">
+            function <span class="apidocSignatureSpan">p2p.Peer.prototype.</span>fixSuccessor
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.p2p.Peer.prototype.getEndpointFor">
+            function <span class="apidocSignatureSpan">p2p.Peer.prototype.</span>getEndpointFor
+            <span class="apidocSignatureSpan">(value, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.p2p.Peer.prototype.isResponsibleFor">
+            function <span class="apidocSignatureSpan">p2p.Peer.prototype.</span>isResponsibleFor
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.p2p.Peer.prototype.remote">
+            function <span class="apidocSignatureSpan">p2p.Peer.prototype.</span>remote
+            <span class="apidocSignatureSpan">(target)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.p2p.Peer.prototype.setPredecessor">
+            function <span class="apidocSignatureSpan">p2p.Peer.prototype.</span>setPredecessor
+            <span class="apidocSignatureSpan">(predecessor)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.p2p.Peer.prototype.setSuccessor">
+            function <span class="apidocSignatureSpan">p2p.Peer.prototype.</span>setSuccessor
+            <span class="apidocSignatureSpan">(successor)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.p2p.Peer.prototype.status">
+            function <span class="apidocSignatureSpan">p2p.Peer.prototype.</span>status
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.p2p.WellKnownPeers">module p2p.WellKnownPeers</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.p2p.WellKnownPeers.WellKnownPeers">
+            function <span class="apidocSignatureSpan">p2p.</span>WellKnownPeers
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.p2p.WellKnownPeers.prototype">module p2p.WellKnownPeers.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.p2p.WellKnownPeers.prototype.add">
+            function <span class="apidocSignatureSpan">p2p.WellKnownPeers.prototype.</span>add
+            <span class="apidocSignatureSpan">(newPeers)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.p2p.WellKnownPeers.prototype.get">
+            function <span class="apidocSignatureSpan">p2p.WellKnownPeers.prototype.</span>get
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.p2p.errors">module p2p.errors</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.p2p.errors.InvalidOperation">
+            function <span class="apidocSignatureSpan">p2p.errors.</span>InvalidOperation
+            <span class="apidocSignatureSpan">(message, cause)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.p2p.errors.UnexpectedStatusCode">
+            function <span class="apidocSignatureSpan">p2p.errors.</span>UnexpectedStatusCode
+            <span class="apidocSignatureSpan">(message, cause)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.p2p.hex">module p2p.hex</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.p2p.hex.add">
+            function <span class="apidocSignatureSpan">p2p.hex.</span>add
+            <span class="apidocSignatureSpan">(left, right)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.p2p.hex.pow2x">
+            function <span class="apidocSignatureSpan">p2p.hex.</span>pow2x
+            <span class="apidocSignatureSpan">(exponent)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.p2p.index">module p2p.index</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.p2p.index.fibonacci">
+            function <span class="apidocSignatureSpan">p2p.index.</span>fibonacci
+            <span class="apidocSignatureSpan">(iterations)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.p2p.serverBase">module p2p.serverBase</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.p2p.serverBase.run">
+            function <span class="apidocSignatureSpan">p2p.serverBase.</span>run
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.p2p" id="apidoc.module.p2p">module p2p</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.p2p.Peer" id="apidoc.element.p2p.Peer">
+        function <span class="apidocSignatureSpan">p2p.</span>Peer
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Peer = function (options) {
+  if (!options) {
+    throw new Error(&#x27;Options are missing.&#x27;);
+  }
+
+  EventEmitter2.call(this, {
+    wildcard: true,
+    delimiter: &#x27;::&#x27;
+  });
+
+  this.protocol = options.protocol || &#x27;https&#x27;;
+  this.self = new Endpoint(options);
+  this.metadata = options.metadata || {};
+
+  this.successor = new Endpoint(options);
+  this.predecessor = new Endpoint(options);
+  this.successors = [];
+  this.fingers = [];
+
+  this.wellKnownPeers = new WellKnownPeers();
+  this.wellKnownPeers.add(this.self);
+  this.wellKnownPeers.add(options.wellKnownPeers || []);
+
+  this.handle = {};
+
+  this.app = express();
+
+  this.app.use(bodyParser.json());
+
+  this.app.post(&#x27;/self&#x27;, routes.self(this));
+  this.app.post(&#x27;/status&#x27;, routes.status(this));
+  this.app.post(&#x27;/metadata&#x27;, routes.metadata(this));
+
+  this.app.post(&#x27;/successor&#x27;, routes.successor(this));
+  this.app.post(&#x27;/successors&#x27;, routes.successors(this));
+  this.app.post(&#x27;/predecessor&#x27;, routes.predecessor(this));
+
+  this.app.post(&#x27;/closest-preceding-finger&#x27;, routes.closestPrecedingFinger(this));
+  this.app.post(&#x27;/find-predecessor&#x27;, routes.findPredecessor(this));
+  this.app.post(&#x27;/find-successor&#x27;, routes.findSuccessor(this));
+
+  this.app.post(&#x27;/join&#x27;, routes.join(this));
+
+  this.app.post(&#x27;/notify&#x27;, routes.notify(this));
+  this.app.post(&#x27;/stabilize&#x27;, routes.stabilize(this));
+  this.app.post(&#x27;/fix-fingers&#x27;, routes.fixFingers(this));
+  this.app.post(&#x27;/fix-successors&#x27;, routes.fixSuccessors(this));
+  this.app.post(&#x27;/fix-predecessor&#x27;, routes.fixPredecessor(this));
+
+  this.app.post(&#x27;/handle/:action&#x27;, routes.handle(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.p2p.WellKnownPeers" id="apidoc.element.p2p.WellKnownPeers">
+        function <span class="apidocSignatureSpan">p2p.</span>WellKnownPeers
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">WellKnownPeers = function () {
+  this.peers = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.p2p.peer" id="apidoc.element.p2p.peer">
+        function <span class="apidocSignatureSpan">p2p.</span>peer
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">peer = function (options) {
+  if (!options) {
+    throw new Error(&#x27;Options are missing.&#x27;);
+  }
+  if (!options.privateKey &#x26;&#x26; options.certificate) {
+    throw new Error(&#x27;Private key is missing.&#x27;);
+  }
+  if (options.privateKey &#x26;&#x26; !options.certificate) {
+    throw new Error(&#x27;Certificate is missing.&#x27;);
+  }
+
+  const useHttps = !!options.privateKey &#x26;&#x26; !!options.certificate;
+
+  options.protocol = useHttps ? &#x27;https&#x27; : &#x27;http&#x27;;
+
+  const peer = new Peer(options);
+
+  const serviceInterval = parse(options.serviceInterval || &#x27;30s&#x27;),
+      wobbleFactor = serviceInterval * 0.5;
+
+  if (useHttps) {
+    https.createServer({
+      key: options.privateKey,
+      cert: options.certificate
+    }, peer.app).listen(peer.self.port, () =&#x3e; {
+      logger.info(&#x27;Server started.&#x27;, {
+        endpoint: peer.self,
+        status: peer.status()
+      });
+    });
+  } else {
+    http.createServer(peer.app).listen(peer.self.port, () =&#x3e; {
+      logger.info(&#x27;Server started.&#x27;, {
+        endpoint: peer.self,
+        status: peer.status()
+      });
+    });
+  }
+
+  [ &#x27;stabilize&#x27;, &#x27;fix-successors&#x27;, &#x27;fix-fingers&#x27;, &#x27;fix-predecessor&#x27; ].forEach(fn =&#x3e; {
+    new Timer(serviceInterval, { variation: wobbleFactor }).on(&#x27;tick&#x27;, () =&#x3e; {
+      peer.remote(peer.self).run(fn, () =&#x3e; {});
+    });
+  });
+
+  new Timer(serviceInterval, { variation: wobbleFactor }).on(&#x27;tick&#x27;, () =&#x3e; {
+    peer.remote(peer.self).run(&#x27;join&#x27;, _.sample(peer.wellKnownPeers.get()), () =&#x3e; {});
+  });
+
+  return peer;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+Then create a new peer by calling the `peer` function and specifying the host and the port to listen on.
+
+Additionally, you need to specify a private key and a certificate. Please note that these values must be strings that contain data
+ in `.pem` format.
+
+```javascript
+const peer = p2p.<span class="apidocCodeKeywordSpan">peer</span>({
+  host: &#x27;localhost&#x27;,
+  port: 3000,
+  privateKey: &#x27;...&#x27;,
+  certificate: &#x27;...&#x27;
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.p2p.Peer" id="apidoc.module.p2p.Peer">module p2p.Peer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.p2p.Peer.Peer" id="apidoc.element.p2p.Peer.Peer">
+        function <span class="apidocSignatureSpan">p2p.</span>Peer
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Peer = function (options) {
+  if (!options) {
+    throw new Error(&#x27;Options are missing.&#x27;);
+  }
+
+  EventEmitter2.call(this, {
+    wildcard: true,
+    delimiter: &#x27;::&#x27;
+  });
+
+  this.protocol = options.protocol || &#x27;https&#x27;;
+  this.self = new Endpoint(options);
+  this.metadata = options.metadata || {};
+
+  this.successor = new Endpoint(options);
+  this.predecessor = new Endpoint(options);
+  this.successors = [];
+  this.fingers = [];
+
+  this.wellKnownPeers = new WellKnownPeers();
+  this.wellKnownPeers.add(this.self);
+  this.wellKnownPeers.add(options.wellKnownPeers || []);
+
+  this.handle = {};
+
+  this.app = express();
+
+  this.app.use(bodyParser.json());
+
+  this.app.post(&#x27;/self&#x27;, routes.self(this));
+  this.app.post(&#x27;/status&#x27;, routes.status(this));
+  this.app.post(&#x27;/metadata&#x27;, routes.metadata(this));
+
+  this.app.post(&#x27;/successor&#x27;, routes.successor(this));
+  this.app.post(&#x27;/successors&#x27;, routes.successors(this));
+  this.app.post(&#x27;/predecessor&#x27;, routes.predecessor(this));
+
+  this.app.post(&#x27;/closest-preceding-finger&#x27;, routes.closestPrecedingFinger(this));
+  this.app.post(&#x27;/find-predecessor&#x27;, routes.findPredecessor(this));
+  this.app.post(&#x27;/find-successor&#x27;, routes.findSuccessor(this));
+
+  this.app.post(&#x27;/join&#x27;, routes.join(this));
+
+  this.app.post(&#x27;/notify&#x27;, routes.notify(this));
+  this.app.post(&#x27;/stabilize&#x27;, routes.stabilize(this));
+  this.app.post(&#x27;/fix-fingers&#x27;, routes.fixFingers(this));
+  this.app.post(&#x27;/fix-successors&#x27;, routes.fixSuccessors(this));
+  this.app.post(&#x27;/fix-predecessor&#x27;, routes.fixPredecessor(this));
+
+  this.app.post(&#x27;/handle/:action&#x27;, routes.handle(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.p2p.Peer.super_" id="apidoc.element.p2p.Peer.super_">
+        function <span class="apidocSignatureSpan">p2p.Peer.</span>super_
+        <span class="apidocSignatureSpan">(conf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter(conf) {
+  this._events = {};
+  this.newListener = false;
+  configure.call(this, conf);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.p2p.Peer.prototype" id="apidoc.module.p2p.Peer.prototype">module p2p.Peer.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.p2p.Peer.prototype.fixSuccessor" id="apidoc.element.p2p.Peer.prototype.fixSuccessor">
+        function <span class="apidocSignatureSpan">p2p.Peer.prototype.</span>fixSuccessor
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fixSuccessor = function () {
+  this.successors.shift();
+
+  if (this.successors.length === 0) {
+    return this.setSuccessor({
+      host: this.self.host,
+      port: this.self.port
+    });
+  }
+
+  this.setSuccessor({
+    host: this.successors[0].host,
+    port: this.successors[0].port
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (!peer) {
+    throw new Error(&#x27;Peer is missing.&#x27;);
+  }
+
+  return (req, res) =&#x3e; {
+    peer.remote(peer.successor).run(&#x27;successors&#x27;, (err, successors) =&#x3e; {
+if (err) {
+  peer.<span class="apidocCodeKeywordSpan">fixSuccessor</span>();
+  return res.sendStatus(500);
+}
+
+successors.unshift(new Endpoint(peer.successor));
+peer.successors = successors;
+
+res.sendStatus(200);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.p2p.Peer.prototype.getEndpointFor" id="apidoc.element.p2p.Peer.prototype.getEndpointFor">
+        function <span class="apidocSignatureSpan">p2p.Peer.prototype.</span>getEndpointFor
+        <span class="apidocSignatureSpan">(value, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getEndpointFor = function (value, callback) {
+  if (!value) {
+    throw new Error(&#x27;Value is missing.&#x27;);
+  }
+  if (!callback) {
+    throw new Error(&#x27;Callback is missing.&#x27;);
+  }
+
+  this.remote(this.self).run(&#x27;find-successor&#x27;, {
+    id: sha1(value)
+  }, (errFindSuccessor, successor) =&#x3e; {
+    if (errFindSuccessor) {
+      return callback(errFindSuccessor);
+    }
+
+    this.remote(successor).run(&#x27;metadata&#x27;, (errMetadata, metadata) =&#x3e; {
+      if (errMetadata) {
+        return callback(errMetadata);
+      }
+
+      callback(null, successor, metadata);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### Finding the responsible peer
+
+If you want to find the peer responsible for a value, call the `getEndpointFor` function and provide the value as a string.
+
+As a result you will get the endpoint of the peer as well as its metadata. If no metadata have been set, an empty object is returned
+.
+
+```javascript
+peer.<span class="apidocCodeKeywordSpan">getEndpointFor</span>(&#x27;foobar&#x27;, (err, endpoint, metadata) =&#x3e; {
+  // ...
+});
+```
+
+If you want to know whether a peer is responsible for a specific value, call the `isResponsibleFor` and provide the value in question
+.
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.p2p.Peer.prototype.isResponsibleFor" id="apidoc.element.p2p.Peer.prototype.isResponsibleFor">
+        function <span class="apidocSignatureSpan">p2p.Peer.prototype.</span>isResponsibleFor
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isResponsibleFor = function (value) {
+  if (!value) {
+    throw new Error(&#x27;Value is missing.&#x27;);
+  }
+  if (!this.predecessor) {
+    return false;
+  }
+
+  const id = sha1(value);
+
+  return interval({
+    left: this.predecessor.id,
+    right: this.self.id,
+    type: &#x27;leftopen&#x27;
+  }).contains(id);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // ...
+});
+```
+
+If you want to know whether a peer is responsible for a specific value, call the `isResponsibleFor` and provide the value in question
+.
+
+```javascript
+console.log(peer.<span class="apidocCodeKeywordSpan">isResponsibleFor</span>(&#x27;foobar&#x27;));
+// =&#x3e; true
+```
+
+### Detecting changes in your neighborhood
+
+To detect whether the successor or predecessor of a peer changed, subscribe to the `environment::successor` and `environment::predecessor
+` events. Please note that the predecessor may be `undefined`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.p2p.Peer.prototype.remote" id="apidoc.element.p2p.Peer.prototype.remote">
+        function <span class="apidocSignatureSpan">p2p.Peer.prototype.</span>remote
+        <span class="apidocSignatureSpan">(target)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">remote = function (target) {
+  if (!target) {
+    throw new Error(&#x27;Target is missing.&#x27;);
+  }
+  if (!target.host) {
+    throw new Error(&#x27;Host is missing.&#x27;);
+  }
+  if (!target.port) {
+    throw new Error(&#x27;Port is missing.&#x27;);
+  }
+
+  return {
+    run: (fn, args, callback) =&#x3e; {
+      if (!fn) {
+        throw new Error(&#x27;Function is missing.&#x27;);
+      }
+      if (!args) {
+        throw new Error(&#x27;Callback is missing.&#x27;);
+      }
+      if (!callback) {
+        callback = args;
+        args = {};
+      }
+
+      const targetAsUrl = url.format({
+        protocol: this.protocol,
+        hostname: target.host,
+        port: target.port,
+        pathname: fn
+      });
+
+      request.post(targetAsUrl, {
+        body: args,
+        json: true,
+        keepAlive: true
+      }, (err, res, body) =&#x3e; {
+        if (err) {
+          return callback(err);
+        }
+
+        res.resume();
+
+        if (res.statusCode !== 200) {
+          const errorSummary = {
+            url: targetAsUrl,
+            args,
+            statusCode: res.statusCode,
+            body: (body || &#x27;&#x27;).trim(&#x27;\n&#x27;)
+          };
+
+          logger.warn(&#x27;Failed to call a remote function.&#x27;, errorSummary);
+          return callback(new errors.UnexpectedStatusCode(`Unexpected status code ${res.statusCode} when running ${fn}.`, errorSummary
+));
+        }
+
+        callback(null, body);
+      });
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### Calling actions on remote peers
+
+If you want to call an action on a remote peer, call the `remote.run` function, and provide the name of the action prefixed with
+ `handle/` as well as its arguments and a callback. If the action returns a result, the callback has a `result` parameter.
+
+```javascript
+peer.<span class="apidocCodeKeywordSpan">remote</span>({
+  host: &#x27;localhost&#x27;,
+  port: 4000
+}).run(&#x27;handle/foo&#x27;, { foo: &#x27;bar&#x27; }, (err, result) =&#x3e; {
+  // ...
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.p2p.Peer.prototype.setPredecessor" id="apidoc.element.p2p.Peer.prototype.setPredecessor">
+        function <span class="apidocSignatureSpan">p2p.Peer.prototype.</span>setPredecessor
+        <span class="apidocSignatureSpan">(predecessor)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setPredecessor = function (predecessor) {
+  const fromStatus = this.status();
+
+  if (predecessor) {
+    this.predecessor = new Endpoint({
+      host: predecessor.host,
+      port: predecessor.port
+    });
+  } else {
+    this.predecessor = undefined;
+  }
+  this.emit(&#x27;environment::predecessor&#x27;, this.predecessor);
+
+  const toStatus = this.status();
+
+  if (toStatus !== fromStatus) {
+    this.emit(`status::${toStatus}`, {
+      from: fromStatus,
+      to: toStatus
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return (req, res) =&#x3e; {
+    if (!peer.predecessor) {
+      return res.sendStatus(200);
+    }
+
+    peer.remote(peer.predecessor).run(&#x27;self&#x27;, err =&#x3e; {
+      if (err) {
+        peer.<span class="apidocCodeKeywordSpan">setPredecessor</span>(undefined);
+      }
+
+      res.sendStatus(200);
+    });
+  };
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.p2p.Peer.prototype.setSuccessor" id="apidoc.element.p2p.Peer.prototype.setSuccessor">
+        function <span class="apidocSignatureSpan">p2p.Peer.prototype.</span>setSuccessor
+        <span class="apidocSignatureSpan">(successor)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setSuccessor = function (successor) {
+  if (!successor) {
+    throw new Error(&#x27;Successor is missing.&#x27;);
+  }
+
+  const fromStatus = this.status();
+
+  this.successor = new Endpoint({
+    host: successor.host,
+    port: successor.port
+  });
+  this.emit(&#x27;environment::successor&#x27;, this.successor);
+
+  const toStatus = this.status();
+
+  if (toStatus !== fromStatus) {
+    this.emit(`status::${toStatus}`, {
+      from: fromStatus,
+      to: toStatus
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+return &#x27;unbalanced&#x27;;
+};
+
+Peer.prototype.fixSuccessor = function () {
+this.successors.shift();
+
+if (this.successors.length === 0) {
+  return this.<span class="apidocCodeKeywordSpan">setSuccessor</span>({
+    host: this.self.host,
+    port: this.self.port
+  });
+}
+
+this.setSuccessor({
+  host: this.successors[0].host,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.p2p.Peer.prototype.status" id="apidoc.element.p2p.Peer.prototype.status">
+        function <span class="apidocSignatureSpan">p2p.Peer.prototype.</span>status
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">status = function () {
+  if (!this.predecessor) {
+    return &#x27;unbalanced&#x27;;
+  }
+
+  if ((this.self.id === this.successor.id) &#x26;&#x26; (this.self.id === this.predecessor.id)) {
+    return &#x27;lonely&#x27;;
+  }
+
+  if ((this.self.id !== this.successor.id) &#x26;&#x26; (this.self.id !== this.predecessor.id)) {
+    return &#x27;joined&#x27;;
+  }
+
+  return &#x27;unbalanced&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+You may store this list and re-use it when setting up a peer from scratch for the next time.
+
+To get the status of a peer call its `status` function.
+
+```javascript
+console.log(peer.<span class="apidocCodeKeywordSpan">status</span>());
+// =&#x3e; &#x27;lonely&#x27; or &#x27;unbalanced&#x27; or &#x27;joined&#x27;
+```
+
+Additionally, you may subscribe to the `status::*` event to get notified whenever the status of a peer changes.
+
+```javascript
+peer.on(&#x27;status::*&#x27;, status =&#x3e; {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.p2p.WellKnownPeers" id="apidoc.module.p2p.WellKnownPeers">module p2p.WellKnownPeers</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.p2p.WellKnownPeers.WellKnownPeers" id="apidoc.element.p2p.WellKnownPeers.WellKnownPeers">
+        function <span class="apidocSignatureSpan">p2p.</span>WellKnownPeers
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">WellKnownPeers = function () {
+  this.peers = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.p2p.WellKnownPeers.prototype" id="apidoc.module.p2p.WellKnownPeers.prototype">module p2p.WellKnownPeers.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.p2p.WellKnownPeers.prototype.add" id="apidoc.element.p2p.WellKnownPeers.prototype.add">
+        function <span class="apidocSignatureSpan">p2p.WellKnownPeers.prototype.</span>add
+        <span class="apidocSignatureSpan">(newPeers)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function (newPeers) {
+  newPeers = _.flatten([ newPeers ]);
+
+  for (let i = 0; i &#x3c; newPeers.length; i++) {
+    const newPeer = newPeers[i];
+
+    if (!_.find(this.peers, newPeer)) {
+      this.peers.push({ host: newPeer.host, port: newPeer.port });
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+this.successor = new Endpoint(options);
+this.predecessor = new Endpoint(options);
+this.successors = [];
+this.fingers = [];
+
+this.wellKnownPeers = new WellKnownPeers();
+this.wellKnownPeers.<span class="apidocCodeKeywordSpan">add</span>(this.self);
+this.wellKnownPeers.add(options.wellKnownPeers || []);
+
+this.handle = {};
+
+this.app = express();
+
+this.app.use(bodyParser.json());
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.p2p.WellKnownPeers.prototype.get" id="apidoc.element.p2p.WellKnownPeers.prototype.get">
+        function <span class="apidocSignatureSpan">p2p.WellKnownPeers.prototype.</span>get
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function () {
+  return _.cloneDeep(this.peers);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  ]
+});
+```
+
+If the peer leaves the network, e.g. because of a connection error, it automatically tries to rejoin. For that it manages an internal
+ list of peers that it got to know. To retrieve this list run the `wellKnownPeers.get` function.
+
+```javascript
+const wellKnownPeers = peer.wellKnownPeers.<span class="apidocCodeKeywordSpan">get</span>();
+```
+
+You may store this list and re-use it when setting up a peer from scratch for the next time.
+
+To get the status of a peer call its `status` function.
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.p2p.errors" id="apidoc.module.p2p.errors">module p2p.errors</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.p2p.errors.InvalidOperation" id="apidoc.element.p2p.errors.InvalidOperation">
+        function <span class="apidocSignatureSpan">p2p.errors.</span>InvalidOperation
+        <span class="apidocSignatureSpan">(message, cause)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">InvalidOperation = function (message, cause) {
+  Error.call(this);
+
+  this.name = errorName;
+  this.message = message || &#x27;&#x27;;
+  this.cause = cause;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+          return left &#x3c; right ? left &#x3c; id &#x26;&#x26; id &#x3c;= right :
+                 left &#x3e; right ? left &#x3c; id || id &#x3c;= right :
+                 true;
+          /* eslint-enable no-nested-ternary */
+        }
+      };
+    default:
+      throw new errors.<span class="apidocCodeKeywordSpan">InvalidOperation</span>(`Unknown interval type ${options.type}.`);
+  }
+};
+
+module.exports = interval;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.p2p.errors.UnexpectedStatusCode" id="apidoc.element.p2p.errors.UnexpectedStatusCode">
+        function <span class="apidocSignatureSpan">p2p.errors.</span>UnexpectedStatusCode
+        <span class="apidocSignatureSpan">(message, cause)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">UnexpectedStatusCode = function (message, cause) {
+  Error.call(this);
+
+  this.name = errorName;
+  this.message = message || &#x27;&#x27;;
+  this.cause = cause;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            url: targetAsUrl,
+            args,
+            statusCode: res.statusCode,
+            body: (body || &#x27;&#x27;).trim(&#x27;\n&#x27;)
+          };
+
+          logger.warn(&#x27;Failed to call a remote function.&#x27;, errorSummary);
+          return callback(new errors.<span class="apidocCodeKeywordSpan">UnexpectedStatusCode</span>(`Unexpected status code ${res
+.statusCode} when running ${fn}.`, errorSummary));
+        }
+
+        callback(null, body);
+      });
+    }
+  };
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.p2p.hex" id="apidoc.module.p2p.hex">module p2p.hex</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.p2p.hex.add" id="apidoc.element.p2p.hex.add">
+        function <span class="apidocSignatureSpan">p2p.hex.</span>add
+        <span class="apidocSignatureSpan">(left, right)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function (left, right) {
+  if (left.length &#x3c; right.length) {
+    left = left.padLeft(right.length, &#x27;0&#x27;);
+  } else if (right.length &#x3c; left.length) {
+    right = right.padLeft(left.length, &#x27;0&#x27;);
+  }
+
+  let carry = 0,
+      sum = &#x27;&#x27;;
+
+  for (let i = left.length - 1; i &#x3e;= 0; i--) {
+    const digit = parseInt(left[i], 16) + parseInt(right[i], 16) + carry;
+
+    carry = digit &#x3e;&#x3e; 4;
+    sum = (digit &#x26; 15).toString(16) + sum;
+  }
+
+  return sum;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+this.successor = new Endpoint(options);
+this.predecessor = new Endpoint(options);
+this.successors = [];
+this.fingers = [];
+
+this.wellKnownPeers = new WellKnownPeers();
+this.wellKnownPeers.<span class="apidocCodeKeywordSpan">add</span>(this.self);
+this.wellKnownPeers.add(options.wellKnownPeers || []);
+
+this.handle = {};
+
+this.app = express();
+
+this.app.use(bodyParser.json());
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.p2p.hex.pow2x" id="apidoc.element.p2p.hex.pow2x">
+        function <span class="apidocSignatureSpan">p2p.hex.</span>pow2x
+        <span class="apidocSignatureSpan">(exponent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pow2x = function (exponent) {
+  const moduloExponent = exponent % 4,
+      overflow = Math.floor(exponent / 4);
+
+  const power = Math.pow(2, moduloExponent) + &#x27;0&#x27;.repeat(overflow);
+
+  return power;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+const fixFingers = function (peer) {
+  if (!peer) {
+    throw new Error(&#x27;Peer is missing.&#x27;);
+  }
+
+  return (req, res) =&#x3e; {
+    const i = random(2, 160),
+  id = hex.add(peer.self.id, hex.<span class="apidocCodeKeywordSpan">pow2x</span>(i - 1));
+
+    peer.remote(peer.self).run(&#x27;find-successor&#x27;, { id }, (err, successor) =&#x3e; {
+if (err) {
+  return res.sendStatus(500);
+}
+
+peer.fingers[i] = new Endpoint({
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.p2p.index" id="apidoc.module.p2p.index">module p2p.index</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.p2p.index.fibonacci" id="apidoc.element.p2p.index.fibonacci">
+        function <span class="apidocSignatureSpan">p2p.index.</span>fibonacci
+        <span class="apidocSignatureSpan">(iterations)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fibonacci = function (iterations) {
+  const result = [ 1, 1 ];
+
+  for (let i = 2; i &#x3c; (iterations + 2); i++) {
+    result[i] = result[i - 1] + result[i - 2];
+  }
+
+  return result.slice(2);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.p2p.serverBase" id="apidoc.module.p2p.serverBase">module p2p.serverBase</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.p2p.serverBase.run" id="apidoc.element.p2p.serverBase.run">
+        function <span class="apidocSignatureSpan">p2p.serverBase.</span>run
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function (options) {
+  const logger = flaschenpost.getLogger();
+
+  const certificate = fs.readFileSync(path.join(__dirname, &#x27;..&#x27;, &#x27;..&#x27;, &#x27;keys&#x27;, &#x27;localhost.selfsigned&#x27;, &#x27;certificate.pem&#x27;)),
+      privateKey = fs.readFileSync(path.join(__dirname, &#x27;..&#x27;, &#x27;..&#x27;, &#x27;keys&#x27;, &#x27;localhost.selfsigned&#x27;, &#x27;privateKey.pem&#x27;));
+
+<span class="apidocCodeCommentSpan">  /* eslint-disable no-process-env */
+</span>  process.env.NODE_TLS_REJECT_UNAUTHORIZED = &#x27;0&#x27;;
+  /* eslint-enable no-process-env */
+
+  const peer = p2p.peer({
+    host: &#x27;localhost&#x27;,
+    port: options.p2p.port,
+    privateKey,
+    certificate,
+    metadata: {
+      host: &#x27;localhost&#x27;,
+      port: options.http.port
+    },
+    wellKnownPeers: [
+      { host: &#x27;localhost&#x27;, port: options.p2p.portJoin }
+    ],
+    serviceInterval: options.serviceInterval
+  });
+
+  peer.on(&#x27;status::*&#x27;, status =&#x3e; {
+    logger.info(&#x27;Changed status.&#x27;, status);
+  });
+
+  peer.on(&#x27;environment::successor&#x27;, successor =&#x3e; {
+    logger.info(&#x27;Changed successor.&#x27;, { successor });
+  });
+
+  peer.on(&#x27;environment::predecessor&#x27;, predecessor =&#x3e; {
+    logger.info(&#x27;Changed predecessor.&#x27;, { predecessor });
+  });
+
+  peer.handle.process = function (payload, done) {
+    logger.info(&#x27;Processing job.&#x27;, payload);
+    done(null, {
+      endpoint: peer.self
+    });
+  };
+
+  const app = express();
+
+  app.use(bodyParser.json());
+
+  app.post(&#x27;/job&#x27;, (req, res) =&#x3e; {
+    peer.getPeerFor(req.body.value, (errGetPeerFor, node) =&#x3e; {
+      if (errGetPeerFor) {
+        return res.sendStatus(500);
+      }
+      peer.remote(node).run(&#x27;process&#x27;, req.body, (err, result) =&#x3e; {
+        if (err) {
+          return res.sendStatus(500);
+        }
+        res.send(result);
+      });
+    });
+  });
+
+  http.createServer(app).listen(options.http.port);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+If you want to call an action on a remote peer, call the `remote.run` function, and provide the name of the action prefixed with
+ `handle/` as well as its arguments and a callback. If the action returns a result, the callback has a `result` parameter.
+
+```javascript
+peer.remote({
+  host: &#x27;localhost&#x27;,
+  port: 4000
+}).<span class="apidocCodeKeywordSpan">run</span>(&#x27;handle/foo&#x27;, { foo: &#x27;bar&#x27; }, (err, result) =&#x3e; {
+  // ...
+});
+```
+
+## Running the build
+
+This module can be built using [Grunt](http://gruntjs.com/). Besides running the tests, this also analyses the code. To run Grunt
+, go to the folder where you have installed p2p and run `grunt`. You need to have [grunt-cli](https://github.com/gruntjs/grunt-cli
+) installed.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
